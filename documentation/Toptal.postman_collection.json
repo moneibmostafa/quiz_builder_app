@@ -1,0 +1,633 @@
+{
+	"info": {
+		"_postman_id": "2ed15ff5-8232-40f1-910a-ee8616a1f65a",
+		"name": "Toptal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mosta1996@hotmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mosta1996@hotmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Create Quiz",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDYxY2E3Y2UtMWE2Ny00MWJhLTk3NjktOTljOTZlMzE2YzNlIiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIyODI5MjksImV4cCI6MTY1MjI5MDEyOX0.Cb8QHKnUM-ngxHENBWX7rUJwF7_FkUJk5KIRf1rtaZg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"quiz title 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/quiz/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quiz",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Created Quizzes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmFhNDIyODItMTM2Zi00YjQwLTk2YTItM2M2NDY5NGI0OTBjIiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIyODUyNTIsImV4cCI6MTY1MjI5MjQ1Mn0.BCIxivkK_njqytUbYG1ZsqpQ3rXky9z30drK7TcSqw4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quiz/userCreatedQuizzes/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quiz",
+								"userCreatedQuizzes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vistitor Published Quizzes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYmFhNDIyODItMTM2Zi00YjQwLTk2YTItM2M2NDY5NGI0OTBjIiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIyODUyNTIsImV4cCI6MTY1MjI5MjQ1Mn0.BCIxivkK_njqytUbYG1ZsqpQ3rXky9z30drK7TcSqw4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quiz/visitorPublishedQuizzes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quiz",
+								"visitorPublishedQuizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Quiz",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzYzNmEyYTMtMWNiYi00NGVmLWJlMTYtOTA1MWUyYjFlNjBlIiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNzA5MjMsImV4cCI6MTY1MjM3ODEyM30.a1mgbi_UYmy7vddBPJyHWStw5LM0fDoUYMIlQ4fKV1Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quiz/publish/2b70763a-92f1-4f24-83dd-e8462b3bbbf6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quiz",
+								"publish",
+								"2b70763a-92f1-4f24-83dd-e8462b3bbbf6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Quiz",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzYzNmEyYTMtMWNiYi00NGVmLWJlMTYtOTA1MWUyYjFlNjBlIiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNzA5MjMsImV4cCI6MTY1MjM3ODEyM30.a1mgbi_UYmy7vddBPJyHWStw5LM0fDoUYMIlQ4fKV1Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quiz/delete/7636a2a3-1cbb-44ef-be16-9051e2b1e60e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quiz",
+								"delete",
+								"7636a2a3-1cbb-44ef-be16-9051e2b1e60e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Published Quiz",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOGMwZWIzYWMtMjRjOS00N2Y2LTg2ODYtZDk4ZWVhNGE4ZjlhIiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTI0NTU0ODQsImV4cCI6MTY1MjQ2MjY4NH0.L3BiP5ghlLHIsOqkgMOL72CJGOCya19e5vuAgw3aCHI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quiz/fetchPublishedQuiz/ff146e73-27ff-42bb-9085-a44d3bd2ef0a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quiz",
+								"fetchPublishedQuiz",
+								"ff146e73-27ff-42bb-9085-a44d3bd2ef0a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"How old are u ?\",\n    \"multipleAnswer\": true,\n    \"quizId\": \"2c7c1bbf-b0e8-4253-82c5-bf0b28693427\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/question/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Text",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"How old are you ?\",\n    \"quizId\": \"2c7c1bbf-b0e8-4253-82c5-bf0b28693427\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/question/edit/6c6cdc7e-c303-4b68-b945-94d5af9b2d05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								"edit",
+								"6c6cdc7e-c303-4b68-b945-94d5af9b2d05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/question/delete/6c6cdc7e-c303-4b68-b945-94d5af9b2d05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question",
+								"delete",
+								"6c6cdc7e-c303-4b68-b945-94d5af9b2d05"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answers",
+			"item": [
+				{
+					"name": "Create/Edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYThkNWIwMTQtZDA2ZC00ZmMzLThjZTEtNmRjM2NhZTM1OGE2IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTI2MjA4NzEsImV4cCI6MTY1MjYyODA3MX0.GtLq55HgTE-TJ66dUot2lCYpck_-oqdJuWtDsybTWkg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    { \"text\": \"Yes\", \"correct\": true },\n    { \"text\": \"No1\", \"correct\": false },\n    { \"text\": \"Yes2\", \"correct\": true },\n    { \"text\": \"No2\", \"correct\": false },\n    { \"text\": \"No3\", \"correct\": false }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/answers/create/cb156879-ff48-4d7c-8760-f3a43812fd28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"answers",
+								"create",
+								"cb156879-ff48-4d7c-8760-f3a43812fd28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz Session",
+			"item": [
+				{
+					"name": "Open Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/quizSession/open/:quizId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quizSession",
+								"open",
+								":quizId"
+							],
+							"variable": [
+								{
+									"key": "quizId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Answers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quizSessionId\": \"\",\n    \"questions\": [\n        {\n            \"questionId\": \"\",\n            \"answers\": []\n        },\n        {\n            \"questionId\": \"\",\n            \"answers\": []\n        },\n        {\n            \"questionId\": \"\",\n            \"answers\": []\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/quizSession/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quizSession",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quiz Stats Solver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quizSession/solver/stats/:quizSessionId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quizSession",
+								"solver",
+								"stats",
+								":quizSessionId"
+							],
+							"variable": [
+								{
+									"key": "quizSessionId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quiz solutions Solver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quizSession/solver/solutions/:quizSessionId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quizSession",
+								"solver",
+								"solutions",
+								":quizSessionId"
+							],
+							"variable": [
+								{
+									"key": "quizSessionId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quiz solutions Owner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjhmOGMxYWQtODIzMi00MTcwLWFmYjQtOTY4ZDM3MzI3YzA4IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTIzNjUzNTcsImV4cCI6MTY1MjM3MjU1N30.cbwy6psB_p2x-KggD4c_TpL8j_YyaYUlJH_HCuIDDRc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quizSession/owner/stats/:quizSessionId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quizSession",
+								"owner",
+								"stats",
+								":quizSessionId"
+							],
+							"variable": [
+								{
+									"key": "quizSessionId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Opened Sessions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYThkNWIwMTQtZDA2ZC00ZmMzLThjZTEtNmRjM2NhZTM1OGE2IiwiZW1haWwiOiJtb3N0YTE5OTZAaG90bWFpbC5jb20iLCJpYXQiOjE2NTI2NTQyMTgsImV4cCI6MTY1MjY2MTQxOH0._qj_PEsfbSYg3DsxwOoapd8tnHd-eOjdbCf_JYK08Xs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/quizSession/openedSessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quizSession",
+								"openedSessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Owner Opened Sessions Specific Quiz",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

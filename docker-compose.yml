@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  mysql-database-dev:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_DATABASE=dev_db
+      - MYSQL_USER=mostafa
+      - MYSQL_PASSWORD=12345678
+      - MYSQL_ROOT_PASSWORD=mostafa1996 #### Passwords Should be imported as secret and not written in plain text ####
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      timeout: 20s
+      retries: 10
+    ports:
+      - 3307:3306
+    volumes:
+      - ./mysql-database:/var/lib/mysql
+    container_name: mysql-database-dev
+
+  mysql-adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    container_name: mysql-adminer
+
+  nodejs-server-dev:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+      - SERVER_NAME=toptal_server
+      - PORT=8000
+      - TOKEN_KEY=tokenKeyString
+
+      - DB_HOST=mysql-database-dev
+      - DB_USER=root
+      - DB_PASSWORD=mostafa1996
+      - DB_NAME=dev_db
+      - DB_PORT=3306
+    volumes:
+      - ./app:/server
+      - /app/node_modules
+    depends_on:
+      mysql-database-dev:
+        condition: service_healthy
+    ports:
+      - '8000:8000'
+    container_name: nodejs-server-dev
