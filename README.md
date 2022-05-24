@@ -1,4 +1,4 @@
-**Toptal_Quiz_task**\
+**Quiz_Builder_task**\
 Start Application Guide:\
 "git clone" repository on your device\
 run "docker-compose up -d" inside cloned repository\
